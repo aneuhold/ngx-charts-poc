@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import getColor from 'src/app/utils/colorFinder';
 import { bubbleData } from './data';
 
 @Component({
@@ -24,7 +25,13 @@ export class ChartComponent {
   yScaleMin: number = 70;
   yScaleMax: number = 85;
   colorScheme: any = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
+    // Colors provided through CSS!
+    domain: [
+      getColor('--color-primary'),
+      getColor('--color-success-900'),
+      getColor('--color-brand-red'),
+      getColor('--color-neutral-900'),
+    ],
   };
 
   constructor() {
